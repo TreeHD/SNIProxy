@@ -1,0 +1,14 @@
+services:
+  sniproxy:
+    image: treexhd/sniproxy
+    build: .
+    container_name: sniproxy
+    volumes:
+      - ./config.json:/app/config.json:ro
+      - ./data:/app/data
+    ports:
+      - "443:443/tcp"
+      - "9999:9999/tcp"
+    restart: unless-stopped
+    network_mode: host # Often better for proxies to avoid NAT overhead if possible, but standard bridge is safer for general use.
+    # We will use host mode if user prefers, but for now we'll stick to standard port mapping as per plan.

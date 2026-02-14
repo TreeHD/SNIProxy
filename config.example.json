@@ -1,0 +1,39 @@
+{
+    "listen": {
+        "host": "0.0.0.0",
+        "port": 443
+    },
+    "port_knock": {
+        "enabled": false,
+        "knock_port": 9999,
+        "whitelist_ttl": 3600,
+        "cleanup_interval": 60
+    },
+    "auto_blacklist": {
+        "enabled": true,
+        "strikes": 10,
+        "window_seconds": 60,
+        "ban_days": 7
+    },
+    "database": {
+        "path": "data/sniproxy.db"
+    },
+    "domains": [
+        "example.com",
+        "*.google.com"
+    ],
+    "upstream_proxy": {
+        "host": "",
+        "port": 0,
+        "username": "",
+        "password": ""
+    },
+    "network": {
+        "prefer_ipv6": false,
+        "connect_timeout": 10,
+        "relay_buffer_size": 8192
+    },
+    "logging": {
+        "level": "INFO"
+    }
+}
